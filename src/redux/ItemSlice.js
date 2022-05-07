@@ -7,7 +7,7 @@ export const ItemSlice = createSlice({
     filter: '',
   },
   reducers: {
-    searchByName(state, payload) {
+    searchByName(state, { payload }) {
       state.filter = payload;
     },
   },

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/ItemSlice';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { addContact } from 'redux/ItemSlice';
 import styles from './Form.module.css';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const item = useSelector(item => item.contacts.items);
 
   const [name, setName] = useState('');
