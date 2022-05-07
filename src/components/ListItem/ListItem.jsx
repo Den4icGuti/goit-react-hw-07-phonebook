@@ -1,10 +1,10 @@
 import styles from './List-item.module.css';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import PropType from 'prop-types';
-import { deleteContact } from 'redux/ItemSlice';
+// import { deleteContact } from 'redux/ItemSlice';
 
 const ListItem = ({ id, name, number }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <>
