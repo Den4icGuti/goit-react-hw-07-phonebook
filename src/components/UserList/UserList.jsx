@@ -7,20 +7,18 @@ const UserList = ({ contacts }) => {
   const filter = useSelector(state => state.filter.filter);
   const normalize = filter.toLowerCase();
 
-  const filteredItems = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalize)
-  );
+  const filteredItems = () => {
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalize)
+    );
+  };
 
+  const visibleContact = filteredItems();
   return (
     <div className={styles.ListUsers}>
       <ul className={styles.list}>
-        {filteredItems.map(items => (
-          <ListItem
-            className={styles.item}
-            key={items.id}
-            {...items}
-            // deleteContact={deleteContact}
-          />
+        {visibleContact.map(contact => (
+          <ListItem className={styles.item} key={contact.id} {...contact} />
         ))}
       </ul>
     </div>
@@ -28,8 +26,8 @@ const UserList = ({ contacts }) => {
 };
 
 UserList.propTypes = {
-  name: PropTypes.string,
-  number: PropTypes.string,
+  visibleContact: PropTypes.array,
+  number: PropTypes.func,
 };
 
 export default UserList;

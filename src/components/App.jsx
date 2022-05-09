@@ -3,28 +3,17 @@ import Form from './Form/Form';
 import UserList from './UserList/UserList';
 import Filter from './Filter/Filter';
 import 'react-toastify/dist/ReactToastify.css';
+import { useGetContactsQuery } from 'redux/api/services';
 
 const App = () => {
-  // const { data, isLoading } = useGetContactsQuery();
+  const { data, isFetching } = useGetContactsQuery();
 
-  // if (isLoading) {
-  //   return <h2>Loading.....</h2>;
-  // }
   return (
     <div>
-      {/* <ul>
-        {data.map(item => (
-          <li key={item.id}>
-            <>{item.name}</>
-          </li>
-        ))}
-      </ul> */}
-
+      {isFetching && <>Loading...</>}
       <Form />
       <Filter title="Contacts" />
-      <UserList
-      // item={search}
-      />
+      <UserList contacts={data} />
     </div>
   );
 };

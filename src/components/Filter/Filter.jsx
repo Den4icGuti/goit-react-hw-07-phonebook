@@ -6,20 +6,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropType from 'prop-types';
 
 const Filter = () => {
-  const filter = useSelector(state => state.filter.filter);
+  const getFilrter = useSelector(state => state.filter.filter);
   const dispatch = useDispatch();
-
-  const changeFilter = e => {
-    const value = e.currentTarget.value;
-    dispatch(searchByName(value));
-  };
 
   return (
     <div className={styles.BoxFilter}>
       <h2>Find contacts by name</h2>
       <label className={styles.Filter}>
         Find contacts by name
-        <input type="text" value={filter} onChange={changeFilter} />
+        <input
+          type="text"
+          value={getFilrter}
+          onChange={e => dispatch(searchByName(e.currentTarget.value))}
+        />
       </label>
     </div>
   );

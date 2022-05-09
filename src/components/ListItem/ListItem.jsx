@@ -1,18 +1,21 @@
 import styles from './List-item.module.css';
-// import { useDispatch } from 'react-redux';
 import PropType from 'prop-types';
-// import { deleteContact } from 'redux/ItemSlice';
+import { useDeleteContactMutation } from 'redux/api/services';
 
-const ListItem = ({ id, name, number }) => {
-  // const dispatch = useDispatch();
-
+const ListItem = ({ name, phone, id, deleting }) => {
+  const [deleteContaact, { isLoading: isDeleting }] =
+    useDeleteContactMutation();
   return (
     <>
       <li className={styles.item}>
         <span className={styles.nameUser}>{name} </span>
-        <span className={styles.phoneNum}>{number} </span>
-        <button type="button" className={styles.btnDel} onClick={() => null}>
-          Delete
+        <span className={styles.phoneNum}>{phone} </span>
+        <button
+          type="button"
+          className={styles.btnDel}
+          onClick={() => deleteContaact(id)}
+        >
+          {deleting ? 'Deliting...' : 'Delete'}
         </button>
       </li>
     </>
