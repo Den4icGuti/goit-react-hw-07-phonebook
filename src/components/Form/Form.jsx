@@ -10,11 +10,12 @@ const Form = () => {
   //===Функция отправки формы===//
   const onHandleSubmit = e => {
     e.preventDefault();
-    addContact({
+    const newContact = {
       id: nanoid(),
       name: e.currentTarget.elements.name.value,
       phone: e.currentTarget.elements.phone.value,
-    });
+    };
+    addContact(newContact);
     e.currentTarget.reset();
   };
 

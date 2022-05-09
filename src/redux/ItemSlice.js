@@ -19,4 +19,4 @@ ItemSlice.proptype = {
 
 export const { searchByName } = ItemSlice.actions;
 
-export const filteredReduce = ItemSlice.reducer;
+export const filteredReduce = ItemSlice;
