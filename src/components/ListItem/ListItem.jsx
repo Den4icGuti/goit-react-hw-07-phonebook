@@ -15,7 +15,8 @@ const ListItem = ({ name, phone, id, deleting }) => {
           className={styles.btnDel}
           onClick={() => deleteContaact(id)}
         >
-          {deleting ? 'Deliting...' : 'Delete'}
+          {isDeleting && <>Deleting...</>}
+          Delete
         </button>
       </li>
     </>
