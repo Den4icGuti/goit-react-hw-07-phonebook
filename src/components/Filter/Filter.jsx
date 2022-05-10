@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropType from 'prop-types';
 
 const Filter = () => {
-  const getFilrter = useSelector(state => state.filter.filter);
+  const getFilter = useSelector(state => state.filter.filter);
   const dispatch = useDispatch();
 
   return (
@@ -16,7 +16,7 @@ const Filter = () => {
         Find contacts by name
         <input
           type="text"
-          value={getFilrter}
+          value={getFilter}
           onChange={e => dispatch(searchByName(e.currentTarget.value))}
         />
       </label>

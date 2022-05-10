@@ -2,7 +2,7 @@ import styles from './List-item.module.css';
 import PropType from 'prop-types';
 import { useDeleteContactMutation } from 'redux/api/services';
 
-const ListItem = ({ name, phone, id, deleting }) => {
+const ListItem = ({ name, phone, id }) => {
   const [deleteContaact, { isLoading: isDeleting }] =
     useDeleteContactMutation();
   return (
@@ -15,8 +15,7 @@ const ListItem = ({ name, phone, id, deleting }) => {
           className={styles.btnDel}
           onClick={() => deleteContaact(id)}
         >
-          {isDeleting && <>Deleting...</>}
-          Delete
+          {isDeleting ? 'Deleting...' : 'Delete'}
         </button>
       </li>
     </>

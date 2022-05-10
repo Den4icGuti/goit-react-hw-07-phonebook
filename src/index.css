@@ -17,3 +17,13 @@ code {
 ul{
   list-style: none;
 }
+
+.loading{
+  text-align: center;
+  font-size: 20px;
+}
+
+.emptyList{
+  text-align: center;
+    font-size: 20px;
+}

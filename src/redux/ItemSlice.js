@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import ProType from 'prop-types';
 
-export const ItemSlice = createSlice({
+export const filterSlice = createSlice({
   name: 'filter',
   initialState: {
     filter: '',
@@ -13,10 +13,10 @@ export const ItemSlice = createSlice({
   },
 });
 
-ItemSlice.proptype = {
-  itemSlice: ProType.node.isRequired,
+filterSlice.proptype = {
+  filter: ProType.string.isRequired,
 };
 
-export const { searchByName } = ItemSlice.actions;
+export const { searchByName } = filterSlice.actions;
 
-export const filteredReduce = ItemSlice.reducer;
+export default filterSlice.reducer;
