@@ -5,7 +5,7 @@ import { filteredReduce } from './ItemSlice';
 
 export const store = configureStore({
   reducer: {
-    filter: filteredReduce.reducer,
+    filter: filteredReduce,
     [apiContacts.reducerPath]: apiContacts.reducer,
   },
   middleware: getDefaultMiddleware => [

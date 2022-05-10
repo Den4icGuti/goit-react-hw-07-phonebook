@@ -10,8 +10,8 @@ const App = () => {
   return (
     <div>
       <Form />
-      <Filter title="Contacts" />
       {isFetching && <p>Loading....</p>}
+      <Filter title="Contacts" />
       <UserList contacts={contacts} />
     </div>
   );
