@@ -10,10 +10,9 @@ const App = () => {
   return (
     <div>
       <Form />
-      <Filter title="Contacts" />
+      <Filter />
       {isFetching && <p className="loading">Loading....</p>}
       {!isError && <UserList contacts={contacts} />}
-      {!contacts && <p className="emptyList">The list is still empty....</p>}
     </div>
   );
 };
