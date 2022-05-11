@@ -3,17 +3,18 @@ import PropType from 'prop-types';
 import { useDeleteContactMutation } from 'redux/api/services';
 
 const ListItem = ({ name, phone, id }) => {
-  const [deleteContaact, { isLoading: isDeleting }] =
-    useDeleteContactMutation();
+  const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
+
   return (
     <>
-      <li className={styles.item}>
+      <li className={styles.item} key={id}>
         <span className={styles.nameUser}>{name} </span>
         <span className={styles.phoneNum}>{phone} </span>
         <button
-          type="button"
+          type="submit"
           className={styles.btnDel}
-          onClick={() => deleteContaact(id)}
+          onClick={() => deleteContact(id)}
+          disabled={isDeleting}
         >
           {isDeleting ? 'Deleting...' : 'Delete'}
         </button>

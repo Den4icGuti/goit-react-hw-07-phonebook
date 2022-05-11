@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { nanoid } from '@reduxjs/toolkit';
 import { useAddContactMutation } from 'redux/api/services';
 import styles from './Form.module.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,7 +10,6 @@ const Form = () => {
   const onHandleSubmit = e => {
     e.preventDefault();
     const newContact = {
-      id: nanoid(),
       name: e.currentTarget.elements.name.value,
       phone: e.currentTarget.elements.phone.value,
     };
@@ -44,10 +42,9 @@ const Form = () => {
           />
         </label>
         <button tupe="submit" className={styles.btnSubmit} disabled={isLoading}>
-          {isLoading ? 'Adding....' : 'Create'}
+          {isLoading ? 'Adding...' : 'Add contact'}
         </button>
       </form>
-      {/* {isError && <>Oops, something went wrong....</>} */}
     </>
   );
 };

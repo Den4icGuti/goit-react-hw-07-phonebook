@@ -8,8 +8,8 @@ const UserList = ({ contacts }) => {
   const normalize = filter.toLowerCase();
 
   const filteredItems = () => {
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalize)
+    return contacts.filter(contacts =>
+      contacts.name.toLowerCase().includes(normalize)
     );
   };
 
@@ -17,8 +17,8 @@ const UserList = ({ contacts }) => {
   return (
     <div className={styles.ListUsers}>
       <ul className={styles.list}>
-        {visibleContact.map(contact => (
-          <ListItem className={styles.item} key={contact.id} {...contact} />
+        {visibleContact.map(contacts => (
+          <ListItem className={styles.item} key={contacts.id} {...contacts} />
         ))}
       </ul>
     </div>
